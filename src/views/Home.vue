@@ -12,7 +12,10 @@ export default {
         }
     },
     props : {},
-    methods : {}    
+    methods : {},
+    mounted() {
+        
+    },    
 }
 </script>
 

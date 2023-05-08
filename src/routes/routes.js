@@ -1,4 +1,6 @@
 
+import views from "../views"
+
 const routes = [
     /**
      * Add your own routes
@@ -6,7 +8,7 @@ const routes = [
     {
         path : '/',
         name : 'home',
-        component : '',
+        component : views.Home,
         props : true,
         meta : {}
     }

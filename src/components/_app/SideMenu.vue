@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="sidemenu" v-bind:class="[isOpen ? 'open' : 'closed']"></v-bind:class>>
+    <div class="sidemenu" v-bind:class="[isOpen ? 'open' : 'closed']">
         <slot></slot>
     </div>
 </template>
@@ -13,7 +13,8 @@ export default {
         isOpen : {
             type : Boolean,
             default : false
-        }
+        },
+        closeDirection : {},
     },
     methods : {},
     mounted () {},    
@@ -26,7 +27,6 @@ export default {
         position: fixed;
         top : 0;
         bottom: 0;
-        transition: all 0.25s ease-in-out ;
         z-index : 110;  /** this side menu sits above the app bar */
     }
 

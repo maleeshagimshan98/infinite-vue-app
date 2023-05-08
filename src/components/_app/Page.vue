@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <slot >
+        <slot>
 
         </slot>
     </div>
@@ -8,25 +8,25 @@
 
 <script>
 export default {
-    data () {
+    data() {
         return {}
     },
-    props : {
-        appBarTitle : [String],
-        isOverlay : {
-            type : Boolean,
-            default : false,
+    props: {
+        appBarTitle: [String],
+        isOverlay: {
+            type: Boolean,
+            default: false,
         },
-        guardNavigation : {
-            type : Boolean,
-            default : false
+        guardNavigation: {
+            type: Boolean,
+            default: false
         },
-        analyticsData : {
-            type : Object
+        analyticsData: {
+            type: Object
         },
     },
-    methods : {},
-    async mounted () {
+    methods: {},
+    async mounted() {
         //... set appBarTitle in vuex
         if (!this.appBarTitle) {
             //... app bar title is not defined
@@ -43,13 +43,11 @@ export default {
 
         //... send analytics data
     },
-    async beforeUnmount () {
+    async beforeUnmount() {
         //... set guardNavigation back to defaults
         //... set isOverlayPresent to false
     },
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

@@ -1,16 +1,25 @@
 <template>
     <div class="app-bar" v-bind:class="[position == 'top' ? 'top' : 'bottom']">
-        <slot>
+        <slot :back="back">
         </slot>
     </div>
 </template>
 
 <script>
 export default {
-    data () {
+    data() {
         return {
-            back () {
-                /**
+        }
+    },
+    props: {
+        position: {
+            type: String,
+            default: "top"
+        },
+    },
+    methods: {
+        async back() {
+            /**
                  *  if (appMetaData.isOverlayPresent)
                  *  this.$store.dispatch('hideOverlay')
                  * 
@@ -18,44 +27,32 @@ export default {
                  *    this.$router.back()
                  *  }
                  */
-            },
         }
     },
-    props : {
-        title : [String],
-        position : {
-            type : String,
-            default : "top"
-        },
-    },
-    methods : {},
     mounted() {
-        
     },
 
     beforeUnmount() {
-        
+
     },
 
 }
 </script>
 
 <style>
-
 .app-bar {
     margin: 0;
     position: fixed;
-    left : 0;
-    right: 0; 
-    z-index : 100;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
 .top {
-    top : 0;    
+    top: 0;
 }
 
 .bottom {
-    bottom : 0
+    bottom: 0
 }
-
 </style>
