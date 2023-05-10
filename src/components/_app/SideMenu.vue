@@ -1,4 +1,5 @@
-<template lang="">
+<template>
+    <!-- reccomended to use components in the _app folder as wrapper components -->
     <div class="sidemenu" v-bind:class="[isOpen ? 'open' : 'closed']">
         <slot></slot>
     </div>
@@ -32,6 +33,10 @@ export default {
 
     .sidemenu.closed {
         left: -20vw;
+    }
+
+    .sidemenu.closed-right {
+        right: -20vw;
     }
 
     .sidemenu.open {

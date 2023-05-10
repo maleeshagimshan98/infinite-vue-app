@@ -1,4 +1,5 @@
 <template>
+    <!-- reccomended to use components in the _app folder as wrapper components -->
     <div class="">
         <slot>
 

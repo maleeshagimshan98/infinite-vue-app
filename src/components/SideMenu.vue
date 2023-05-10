@@ -9,7 +9,7 @@
                 Styles for Open and Close states are implemented
                 implement the close() function yourself 
             -->
-        </side-menu>>
+        </side-menu>
     </div>
 </template>
 

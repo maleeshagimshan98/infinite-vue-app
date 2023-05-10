@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
     <div>
         <AppBar :position="'top'">
             <!-- add your top app bar ui here, pass the app bar title to appbar -->
@@ -11,7 +11,7 @@ import AppBar from './_app/AppBar.vue';
 export default {
     data () {
         return {
-            title : this.$store.state.meta.appBarTitle //... change this to store getter
+            title : this.$store.state._meta.appBarTitle //... change this to store getter
         }
     },
     props : {
