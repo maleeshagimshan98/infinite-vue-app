@@ -2,8 +2,8 @@
  * Copyright - 2022 - Maleesha Gimshan (https://github.com/maleeshagimshan98)
  */
 
-import { createApp } from "vue"
-import { createRouter } from "vue-router"
+import { createApp } from "vue/dist/vue.esm-bundler"
+import { createRouter, createWebHashHistory } from "vue-router"
 import { createStore } from "vuex"
 import VueMeta from "vue-meta"
 import initStore from "./store/store"
@@ -14,7 +14,7 @@ const store = createStore(initStore())
 
 
 const router = createRouter({
-    history : '',    
+    history : createWebHashHistory(),    
     routes : routes
 })
 
@@ -46,5 +46,8 @@ router.afterEach(async (to,from) => {
 const main = createApp(app)
 main.use(store)
 main.use(router)
-main.use(VueMeta)
+//main.use(VueMeta)
 main.mount('#app')
+
+//... for testing purpose
+export default main
