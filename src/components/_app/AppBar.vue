@@ -1,5 +1,5 @@
 <template>
-    <!-- reccomended to use components in the _app folder as wrapper components -->
+    <!-- recommended to use components in the _app folder as wrapper components -->
     <div class="app-bar" v-bind:class="[position == 'top' ? 'top' : 'bottom']">
         <slot :back="back">
         </slot>

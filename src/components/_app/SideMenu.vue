@@ -1,5 +1,5 @@
 <template>
-    <!-- reccomended to use components in the _app folder as wrapper components -->
+    <!-- recommended to use components in the _app folder as wrapper components -->
     <div class="sidemenu" v-bind:class="[isOpen ? 'open' : 'closed']">
         <slot></slot>
     </div>

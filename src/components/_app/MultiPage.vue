@@ -1,5 +1,5 @@
 <template>
-    <!-- reccomended to use components in the _app folder as wrapper components -->
+    <!-- recommended to use components in the _app folder as wrapper components -->
     <div class="">
         <slot :currentPage="currentPage" :next="next" :prev="prev" :jump="jump"></slot>
     </div>
