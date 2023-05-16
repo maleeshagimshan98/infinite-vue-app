@@ -11,10 +11,14 @@ import AppBar from './_app/AppBar.vue';
 export default {
     data () {
         return {
-            title : this.$store.state._meta.appBarTitle //... change this to store getter
         }
     },
     props : {
+    },
+    computed : {
+        title () {
+            return this.$store.state._meta.appBarTitle
+        }
     },
     components : {
         AppBar,
