@@ -10,7 +10,15 @@ import initStore from "./store/store"
 import routes from "./routes/routes"
 import app from "./App.vue"
 
-const store = createStore(initStore())
+//... import apiClient for your api
+//... import store modules
+
+/** OPTIONAL */
+//... provide page view analytics callback
+//... provide callback to report errors into backend
+
+
+const store = createStore(initStore({}))
 
 
 const router = createRouter({
