@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="default-layout">
         <!-- layout components-->
         <app-bar />
         <side-menu />

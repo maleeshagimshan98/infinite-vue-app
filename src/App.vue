@@ -1,5 +1,4 @@
 <template>
-  <div class="">
     <default-layout>
       <router-view v-slot="{ Component }">
         <!-- App-wide default transitions -->
@@ -14,7 +13,6 @@
       </modal -->
 
     </default-layout>
-  </div>
 </template>
 
 <script>
