@@ -13,6 +13,10 @@ export default {
         }
     },
     props: {
+        clickaway : {
+            type : Boolean,
+            default : false
+        }
     },
     methods: {
         show() {
@@ -37,6 +41,6 @@ export default {
     position: fixed;
     top: 0;
     bottom: 0;
-    z-index: 120;
+    z-index: 150;
 }
 </style>
