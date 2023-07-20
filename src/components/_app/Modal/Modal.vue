@@ -1,6 +1,6 @@
 <template>
     <!-- recommended to use components in the _app folder as wrapper components -->
-    <div class="modal">
+    <div class="modal" v-if="isOpen" v-click-away="event => close(event)">
         <slot>
         </slot>
     </div>
@@ -13,15 +13,24 @@ export default {
         }
     },
     props: {
+        isOpen : {
+            type : Boolean,
+            default : false
+        },
         clickaway : {
             type : Boolean,
             default : false
         }
     },
     methods: {
-        show() {
+        open() {
         },
-        async hide() {
+        async close() {
+            /**
+             * don't pass and update the passed prop value 
+             * It's the responsibility of component consuming this component
+             */
+            this.$emit('modal:close')
         }
     },
     mounted() {
