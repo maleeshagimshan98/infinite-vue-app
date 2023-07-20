@@ -1,12 +1,13 @@
 <template>
-    <div>
+    <default-layout>
         <page :appBarTitle="'test-home app bar'" :analyticsData="analyticsData">
             Home
         </page>
-    </div>
+    </default-layout>
 </template>
 
 <script>
+import DefaultLayout from '../layouts/DefaultLayout.vue';
 import Page from '../components/_app/Page.vue';
 
 export default {
@@ -24,7 +25,7 @@ export default {
         }
         this.analyticsData.page = page
     },
-    components: { Page }
+    components: { Page, DefaultLayout }
 }
 </script>
 

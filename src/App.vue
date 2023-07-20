@@ -1,22 +1,18 @@
-<template>
-    <default-layout>
-      <router-view v-slot="{ Component }">
-        <!-- App-wide default transitions -->
-        <transition>
-          <Component :is="Component" />
-        </transition>
-      </router-view>
+<template>   
+    <router-view v-slot="{ Component }">
+      <!-- App-wide default transitions -->
+      <transition>
+        <Component :is="Component" />
+      </transition>
+    </router-view>
 
-      <!-- modal>
-            show app wide errors - like errors in store.dispatch('api')
-            write your own modal in this component's slot.
-      </modal -->
-
-    </default-layout>
+    <!-- modal>
+          show app wide errors - like errors in store.dispatch('api')
+          write your own modal in this component's slot.
+    </modal -->
 </template>
 
 <script>
-import DefaultLayout from "./layouts/DefaultLayout.vue"
 import AppBar from "./components/AppBar.vue"
 import SideMenu from "./components/SideMenu.vue"
 import Modal from "./components/_app/Modal.vue"
@@ -32,7 +28,6 @@ export default {
   components: {
     AppBar,
     SideMenu,
-    DefaultLayout,
     Modal
   },
   async mounted() { },
