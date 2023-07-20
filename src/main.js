@@ -9,6 +9,7 @@ import VueMeta from "vue-meta"
 import initStore from "./store/store"
 import routes from "./routes/routes"
 import app from "./App.vue"
+import clickAway from "vue3-click-away"
 
 //... import apiClient for your api
 //... import store modules
@@ -55,6 +56,7 @@ const main = createApp(app)
 main.use(store)
 main.use(router)
 //main.use(VueMeta)
+main.use(clickAway)
 main.mount('#app')
 
 //... for testing purpose
