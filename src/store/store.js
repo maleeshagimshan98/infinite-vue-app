@@ -72,12 +72,20 @@ function initStore ({apiClient, modules, pageViewAnalyticsClosure, errorLoggingC
                 commit('setAppBarTitle',title)
             },
             setCookiesAllowedState ({state, commit, dispatch, getters, }, isCookiesAllowed) {
+                if (typeof value !== "boolean") {
+                    //... do something, value is not boolean
+                    throw new Error(`Error in vuex action - setNavigationGuard. Boolean is required, but passed ${value}`)
+                }
                 commit('setCookiesAllowedState',isCookiesAllowed)
             },
             setPreviousPage ({state,commit,dispatch,getters},previousPage) {
                 commit('setPreviousPage',previousPage)
             },
             setOverlayStatus ({state,commit,dispatch,getters},isOverlay) {
+                if (typeof value !== "boolean") {
+                    //... do something, value is not boolean
+                    throw new Error(`Error in vuex action - setNavigationGuard. Boolean is required, but passed ${value}`)
+                }
                 commit('setOverlayStatus',isOverlay)
             },
             setPreventBackNav ({state, commit, dispatch, getters, }, value) {
@@ -97,7 +105,7 @@ function initStore ({apiClient, modules, pageViewAnalyticsClosure, errorLoggingC
                     commit('setErrorMessageState',false)
                 }                
             },                      
-            async api ({state, commit, dispatch, getters, },payload) {
+            async loadingData ({state, commit, dispatch, getters, }, callback) {
                 commit('setDataLoadingState',true)   
 
                 if (!state.apiClient) {
@@ -108,11 +116,18 @@ function initStore ({apiClient, modules, pageViewAnalyticsClosure, errorLoggingC
                 }                
                 
                 try {
-
+                    if (callback) {
+                        await callback()
+                    }
                 }
                 catch (error) {
                     commit('setDataLoadingState',false)
-                    //... send error log to the server or analytics? 
+                    console.error(`${error.message}`)
+                    throw error
+                    /**
+                     * send error log to the server or analytics? 
+                     * A responsibility of the function using this store action
+                     */
                 }
             },
             async sendPageViewAnalytics ({state, commit, dispatch, getters, },data) {
@@ -126,14 +141,7 @@ function initStore ({apiClient, modules, pageViewAnalyticsClosure, errorLoggingC
                     //... directly calling the closure
                     state.errorLoggingClosure(data)
                 }
-            },
-            async sendAnalyticsData ({state, commit, dispatch, getters, },data) {
-                if (!state.apiClient) {
-
-                }
-                //... call apiclient and send page's analytics data
-                //state.analytics() //... example
-            },        
+            },   
         },
         getters : {
             hasNavigationGuard (state,getters) {
