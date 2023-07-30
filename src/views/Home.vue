@@ -1,6 +1,6 @@
 <template>
     <default-layout>
-        <page :appBarTitle="'test-home app bar'" :analyticsData="analyticsData">
+        <page :appBarTitle="'test-home app bar'" :isDataLoading="false" :analyticsData="analyticsData">
             Home
         </page>
     </default-layout>
