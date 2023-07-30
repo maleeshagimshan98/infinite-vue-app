@@ -15,7 +15,7 @@
 <script>
 import AppBar from "./components/AppBar.vue"
 import SideMenu from "./components/SideMenu.vue"
-import Modal from "./components/_app/Modal.vue"
+import Modal from "./components/_app/Modal/Modal.vue"
 
 export default {
   data() {
