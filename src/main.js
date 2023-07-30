@@ -10,7 +10,7 @@ import initStore from "./store/store"
 import routes from "./routes/routes"
 import app from "./App.vue"
 import clickAway from "vue3-click-away"
-import PreLoader from "vue-preloader"
+import PreLoader from "infinite-vue-preloader"
 
 //... import apiClient for your api
 //... import store modules
