@@ -1,15 +1,22 @@
 <template>
     <!-- recommended to use components in the _app folder as wrapper components -->
     <div class="app-bar" v-bind:class="[position == 'top' ? 'top' : 'bottom']">
-        <slot :back="back">
+        <slot :appBarState="appBarState" :back="back">
         </slot>
     </div>
 </template>
 
 <script>
+import AppBarState from './AppBarState'
+
 export default {
     data() {
         return {
+        }
+    },
+    computed : {
+        appBarState () {
+            return this.$store.getters.getAppBarState
         }
     },
     props: {
@@ -30,12 +37,16 @@ export default {
                  */
         }
     },
-    mounted() {
+    beforeMount () {
+        this.$store.dispatch('setAppBarState', new AppBarState())
     },
-
+    mounted() {                        
+    },
     beforeUnmount() {
-
     },
+    unmounted () {
+        this.$store.dispatch('setAppBarState',null)
+    }
 
 }
 </script>
