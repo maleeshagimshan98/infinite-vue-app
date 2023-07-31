@@ -1,6 +1,6 @@
 <template>
     <!-- recommended to use components in the _app folder as wrapper components -->
-    <div class="modal" v-if="isOpen" v-click-away="event => close(event)">
+    <div class="modal" v-if="isOpen" v-click-away="event => clickaway ? close(event) : null">
         <slot>
         </slot>
     </div>
