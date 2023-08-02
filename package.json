@@ -8,6 +8,7 @@
     "url": "https://github.com/maleeshagimshan98/infinite-vue-app"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.0.18",
     "@maleeshagimshan98/vuex-pagination-wrapper": "1.1.0",
     "axios": "^1.1.3",
     "infinite-vue-preloader": "^1.0.0",
