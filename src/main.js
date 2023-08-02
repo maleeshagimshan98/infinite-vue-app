@@ -11,6 +11,7 @@ import routes from "./routes/routes"
 import app from "./App.vue"
 import clickAway from "vue3-click-away"
 import PreLoader from "infinite-vue-preloader"
+import CustomTextInput from "vue-custom-text-input"
 
 //... import apiClient for your api
 //... import store modules
@@ -55,6 +56,7 @@ router.afterEach(async (to,from) => {
 
 const main = createApp(app)
 main.component('PreLoader', PreLoader)
+main.component('CustomTextInput', CustomTextInput)
 main.use(store)
 main.use(router)
 //main.use(VueMeta)
