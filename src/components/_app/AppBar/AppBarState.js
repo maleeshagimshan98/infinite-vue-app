@@ -42,6 +42,17 @@ class AppBarState {
   {
     this[name] = value
   }
+
+  /**
+   * Get the app bar state data set by the user
+   * 
+   * @param {String} name 
+   * @returns 
+   */
+  getData (name)
+  {
+    return this[name]
+  }
 }
 
 export default AppBarState
