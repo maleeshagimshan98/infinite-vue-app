@@ -36,7 +36,6 @@ function initStore({
         pageViewAnalyticsClosure: pageViewAnalyticsClosure,
         errorLoggingClosure: errorLoggingClosure,
         _meta: {
-          appBarTitle: "",
           appBarState: null,
           isCookiesAllowed: true,
           sideBarOpen: false,
@@ -194,9 +193,6 @@ function initStore({
       },
     },
     getters: {
-      appBarState(state, getters) {
-        return state._meta.appBarState
-      },
       hasNavigationGuard(state, getters) {
         return state._meta.preventBackNav
       },
