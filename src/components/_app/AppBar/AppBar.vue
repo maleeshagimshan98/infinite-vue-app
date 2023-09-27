@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import AppBarState from './AppBarState'
 
 export default {
     data() {
@@ -38,7 +37,9 @@ export default {
         }
     },
     beforeMount () {
-        this.$store.dispatch('setAppBarState', new AppBarState())
+        if (!this.$store.getters.getAppBarState) {
+            console.warn('Warning - No appBarState is found on the vuex store')
+        }    
     },
     mounted() {                        
     },

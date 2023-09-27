@@ -9,6 +9,7 @@ import VueMeta from "vue-meta"
 import initStore from "./store/store"
 import routes from "./routes/routes"
 import app from "./App.vue"
+import appBarState from "./components/_app/AppBar/AppBarState"
 import clickAway from "vue3-click-away"
 import PreLoader from "infinite-vue-preloader"
 import CustomTextInput from "vue-custom-text-input"
@@ -22,7 +23,7 @@ import CustomTextInput from "vue-custom-text-input"
 
 
 const store = createStore(initStore({}))
-
+store.dispatch('setAppBarState',new appBarState())
 
 const router = createRouter({
     history : createWebHashHistory(),    
