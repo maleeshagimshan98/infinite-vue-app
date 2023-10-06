@@ -55,7 +55,7 @@ export default {
 <style>
 .app-bar {
     margin: 0;
-    position: fixed;
+    position: relative;
     left: 0;
     right: 0;
     z-index: 100;
