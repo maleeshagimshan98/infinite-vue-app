@@ -14,7 +14,7 @@
     "infinite-vue-preloader": "^1.0.0",
     "jquery": "^3.7.1",
     "vue": "^3.2.41",
-    "vue-custom-text-input": "^1.1.2",
+    "vue-custom-text-input": "^1.1.3",
     "vue-meta": "^2.4.0",
     "vue-router": "^4.1.6",
     "vue-switch-controller": "^1.0.0",
