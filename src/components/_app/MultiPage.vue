@@ -39,7 +39,7 @@ export default {
       console.log(this.currentPage) //... testing
     },
     jump(pageNo = null) {
-      if (pageno == null || pageNo === this.currentPage) {
+      if (pageNo == null || pageNo === this.currentPage) {
         return
       }
       if (pageNo > 0 && pageNo < this.pages) {
