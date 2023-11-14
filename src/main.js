@@ -12,7 +12,7 @@ import app from "./App.vue"
 import appBarState from "./components/_app/AppBar/AppBarState"
 import clickAway from "vue3-click-away"
 import PreLoader from "infinite-vue-preloader"
-import CustomTextInput from "vue-custom-text-input"
+import {CustomInput as CustomTextInput} from "vue-custom-text-input"
 
 //... import apiClient for your api
 //... import store modules
