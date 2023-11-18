@@ -1,6 +1,6 @@
 <template>
     <!-- recommended to use components in the _app folder as wrapper components -->
-    <div class="modal" v-if="isOpen" v-click-away="event => clickaway ? close(event) : null">
+    <div class="infinite-vue-modal" v-if="isOpen" v-click-away="event => clickaway ? close(event) : null">
         <slot>
         </slot>
     </div>
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style>
-.modal {
+.infinite-vue-modal {
     position: fixed;
     top: 0;
     bottom: 0;
