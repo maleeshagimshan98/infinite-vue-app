@@ -40,7 +40,7 @@
   },
   "scripts": {
     "dev": "vite serve",
-    "build": "",
+    "build": "vite build",
     "test": "jest"
   },
   "author": {
