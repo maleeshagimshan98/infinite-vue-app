@@ -19,7 +19,7 @@ export default {
         },
         clickaway : {
             type : Boolean,
-            default : false
+            default : true
         }
     },
     methods: {
