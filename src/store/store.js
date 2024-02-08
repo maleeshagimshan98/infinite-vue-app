@@ -12,7 +12,7 @@ function initStore({
     state() {
       if (
         apiClient &&
-        (typeof apiClient !== "function" || typeof apiClient !== "object")
+        (typeof apiClient !== "function" && typeof apiClient !== "object")
       ) {
         throw new Error(
           `apiClient must be a function or an object, received ${apiClient}`
@@ -98,10 +98,10 @@ function initStore({
         { state, commit, dispatch, getters },
         isCookiesAllowed
       ) {
-        if (typeof value !== "boolean") {
+        if (typeof isCookiesAllowed !== "boolean") {
           //... do something, value is not boolean
           throw new Error(
-            `Error in vuex action - setNavigationGuard. Boolean is required, but passed ${value}`
+            `Error in vuex action - setNavigationGuard. Boolean is required, but passed ${isCookiesAllowed}`
           )
         }
         commit("setCookiesAllowedState", isCookiesAllowed)
@@ -110,10 +110,10 @@ function initStore({
         commit("setPreviousPage", previousPage)
       },
       setOverlayStatus({ state, commit, dispatch, getters }, isOverlay) {
-        if (typeof value !== "boolean") {
+        if (typeof isOverlay !== "boolean") {
           //... do something, value is not boolean
           throw new Error(
-            `Error in vuex action - setNavigationGuard. Boolean is required, but passed ${value}`
+            `Error in vuex action - setNavigationGuard. Boolean is required, but passed ${isOverlay}`
           )
         }
         commit("setOverlayStatus", isOverlay)
