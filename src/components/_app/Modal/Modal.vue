@@ -34,12 +34,12 @@ export default {
         }
     },
     mounted() {
-        this.$store.dispatch("setOverlayPresent", true)
+        this.$store.dispatch("setOverlayStatus", true)
         this.$store.dispatch('setPreventBackNav',true) //... check
     },
     async unmounted() {
         this.$store.dispatch("removeErrorMessage") //... check
-        this.$store.dispatch("setOverlayPresent", false)
+        this.$store.dispatch("setOverlayStatus", false)
         this.$store.dispatch('setPreventBackNav',false) //... check
     }
 }
