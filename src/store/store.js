@@ -84,7 +84,7 @@ function initStore({
         state._meta.errors.pop() //... check
       },
       setDataLoadingState(state, payload) {
-        state.isDataLoading = payload
+        state._meta.isDataLoading = payload
       },
     },
     actions: {
@@ -171,7 +171,7 @@ function initStore({
           }
         } catch (error) {
           commit("setDataLoadingState", false)
-          console.error(`${error.message}`)
+          console.error(error)
           throw error
           /**
            * send error log to the server or analytics?
