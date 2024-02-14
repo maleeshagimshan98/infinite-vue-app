@@ -167,7 +167,9 @@ function initStore({
 
         try {
           if (callback) {
-            return await callback()
+            let res = await callback()
+            commit("setDataLoadingState", false)
+            return res
           }
         } catch (error) {
           commit("setDataLoadingState", false)
