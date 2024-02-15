@@ -1,7 +1,6 @@
 <template>
     <div id="default-layout">
         <!-- layout components-->
-        <app-bar />
         <side-menu />
         <slot>
             <!-- main content -->
@@ -13,8 +12,7 @@
 </template>
 
 <script>
-import AppBar from '../components/AppBar.vue';
-import SideMenu from '../components/SideMenu.vue';
+import SideMenu from '../components/SideMenu.vue'
 
 export default {
     data() {
@@ -25,7 +23,7 @@ export default {
     },
     props: {},
     components: {
-        AppBar, SideMenu
+        SideMenu
     },
     async mounted() {
 
