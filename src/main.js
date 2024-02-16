@@ -13,17 +13,9 @@ import appBarState from "./components/_app/AppBar/AppBarState"
 import clickAway from "vue3-click-away"
 import PreLoader from "infinite-vue-preloader"
 import {CustomInput as CustomTextInput} from "vue-custom-text-input"
+import { MenuState} from "infinite-vue-menu"
+import { menuConfig, menuStyle } from "./components/SideMenu/SideMenuData"
 
-//... import apiClient for your api
-//... import store modules
-
-/** OPTIONAL */
-//... provide page view analytics callback
-//... provide callback to report errors into backend
-
-
-const store = createStore(initStore({}))
-store.dispatch('setAppBarState',new appBarState())
 
 const router = createRouter({
     history : createWebHashHistory(),    
@@ -54,6 +46,17 @@ router.afterEach(async (to,from) => {
     await store.dispatch('setPreviousPage',from.fullPath)
 })
 
+//... import apiClient for your api
+//... import store modules
+
+/** OPTIONAL */
+//... provide page view analytics callback
+//... provide callback to report errors into backend
+
+
+const store = createStore(initStore({}))
+store.dispatch('setAppBarState',new appBarState())
+sessionStorage.dispatch('setSideMenuState',new MenuState(menuConfig(router,menuStyle)))
 
 const main = createApp(app)
 main.component('PreLoader', PreLoader)

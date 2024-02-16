@@ -53,6 +53,9 @@ function initStore({
       setAppBarTitle(state, payload) {
         state._meta.appBarState.setTitle(payload)
       },
+      setSideMenuState(state, payload) {
+        state._meta.sideMenuState = payload
+      },      
       setAppBarState(state, payload) {
         state._meta.appBarState = payload
       },
@@ -90,6 +93,9 @@ function initStore({
     actions: {
       setAppBarTitle({ state, commit, dispatch, getters }, title) {
         commit("setAppBarTitle", title)
+      },
+      setSideMenuState({ state, commit, dispatch, getters }, menuState) {
+        commit("setSideMenuState", menuState)
       },
       setAppBarState({ state, commit, dispatch, getters }, appBarState) {
         commit("setAppBarState", appBarState)
@@ -207,6 +213,9 @@ function initStore({
       },
       getAppBarState(state) {
         return state._meta.appBarState
+      },
+      getSideMenuState(state) {
+        return state._meta.sideMenuState
       },
       isCookiesAllowed(state) {
         return state._meta.isCookiesAllowed
