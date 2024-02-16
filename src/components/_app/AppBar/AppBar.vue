@@ -46,7 +46,6 @@ export default {
     beforeUnmount() {
     },
     unmounted () {
-        this.$store.dispatch('setAppBarState',null)
     }
 
 }
