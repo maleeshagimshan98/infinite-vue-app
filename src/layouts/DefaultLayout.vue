@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import SideMenu from '../components/SideMenu.vue'
+import SideMenu from "../components/SideMenu/SideMenu.vue"
 
 export default {
     data() {
