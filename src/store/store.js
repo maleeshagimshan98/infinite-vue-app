@@ -107,7 +107,7 @@ function initStore({
         if (typeof isCookiesAllowed !== "boolean") {
           //... do something, value is not boolean
           throw new Error(
-            `Error in vuex action - setNavigationGuard. Boolean is required, but passed ${isCookiesAllowed}`
+            `Error in vuex action - setCookiesAllowedState. Boolean is required, but passed ${isCookiesAllowed}`
           )
         }
         commit("setCookiesAllowedState", isCookiesAllowed)
@@ -119,7 +119,7 @@ function initStore({
         if (typeof isOverlay !== "boolean") {
           //... do something, value is not boolean
           throw new Error(
-            `Error in vuex action - setNavigationGuard. Boolean is required, but passed ${isOverlay}`
+            `Error in vuex action - setOverlayStatus. Boolean is required, but passed ${isOverlay}`
           )
         }
         commit("setOverlayStatus", isOverlay)
@@ -128,7 +128,7 @@ function initStore({
         if (typeof value !== "boolean") {
           //... do something, value is not boolean
           throw new Error(
-            `Error in vuex action - setNavigationGuard. Boolean is required, but passed ${value}`
+            `Error in vuex action - setPreventBackNav. Boolean is required, but passed ${value}`
           )
         }
         commit("setPreventBackNav", value)
@@ -137,7 +137,7 @@ function initStore({
         if (typeof value !== "boolean") {
           //... do something, value is not boolean
           throw new Error(
-            `Error in vuex action - setNavigationGuard. Boolean is required, but passed ${value}`
+            `Error in vuex action - openSideBar. Boolean is required, but passed ${value}`
           )
         }
         commit("openSideBar", value)
@@ -146,7 +146,7 @@ function initStore({
         if (typeof value !== "boolean") {
           //... do something, value is not boolean
           throw new Error(
-            `Error in vuex action - setNavigationGuard. Boolean is required, but passed ${value}`
+            `Error in vuex action - closeSideBar. Boolean is required, but passed ${value}`
           )
         }
         commit("closeSideBar", value)
