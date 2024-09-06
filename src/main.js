@@ -15,7 +15,7 @@ import PreLoader from "infinite-vue-preloader"
 import {CustomInput as CustomTextInput} from "vue-custom-text-input"
 import { MenuState} from "infinite-vue-menu"
 import { menuConfig, menuStyle } from "./components/SideMenu/SideMenuData"
-
+import "../src/styles/css/styles.css"
 
 const router = createRouter({
     history : createWebHashHistory(),    
