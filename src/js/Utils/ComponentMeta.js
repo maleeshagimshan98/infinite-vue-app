@@ -54,7 +54,7 @@ class ComponentMeta {
      * Switch data loading state while an async function runs
      * 
      * @param {Function} callback 
-     * @returns {any} - return value of the callback function
+     * @returns {<Promise>} - return a promise with the resolve value of the callback function
      * @throws {Error}
      */
     async switchDataLoading (callback) {
