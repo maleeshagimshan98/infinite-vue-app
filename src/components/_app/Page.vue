@@ -4,6 +4,8 @@
         <slot>
 
         </slot>
+        <PreLoader class="fixed" v-if="isDataLoading">
+        </PreLoader>
     </div>
 </template>
 
