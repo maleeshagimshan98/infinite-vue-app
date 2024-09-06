@@ -1,3 +1,5 @@
 node_modules
 .vs
 .vscode
+dist/
+src/js/APIClient/
