@@ -30,7 +30,18 @@ export default {
     SideMenu,
     Modal
   },
-  async mounted() { },
+  async mounted() { 
+    // let localUserResponse = await this.$store.dispatch('auth/findLocalSavedUser')
+    // if (localUserResponse.hasLocalUser() && await localUserResponse.isUserValid()) {
+    //   this.$store.dispatch('auth/setLoggedInUser', localUserResponse.getUser())
+    //   this.$router.push('/')
+    // }
+    // else {
+    //   this.$router.push({
+    //     name: 'Login'
+    //   })
+    // }
+  },
   beforeMount() { },
 }
 </script>
