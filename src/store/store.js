@@ -37,6 +37,7 @@ function initStore({
         errorLoggingClosure: errorLoggingClosure,
         _meta: {
           appBarState: null,
+          sideMenuState : null,
           isCookiesAllowed: true,
           sideBarOpen: false,
           preventBackNav: false,
