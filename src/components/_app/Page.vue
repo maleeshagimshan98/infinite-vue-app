@@ -1,6 +1,6 @@
 <template>
     <!-- recommended to use components in the _app folder as wrapper components -->
-    <div v-bind:class="[scrollable? 'page' : '']">
+    <div v-bind:class="[scrollable? 'inf-page' : '']">
         <slot>
 
         </slot>
@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style>
-.page {
+.inf-page {
   margin-right: -50px; /* maximum width of scrollbar */
   padding-right: 50px; /* maximum width of scrollbar */
   overflow-y: scroll;

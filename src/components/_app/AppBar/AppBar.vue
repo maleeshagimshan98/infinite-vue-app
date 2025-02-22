@@ -1,6 +1,6 @@
 <template>
     <!-- recommended to use components in the _app folder as wrapper components -->
-    <div class="app-bar" v-bind:class="[position == 'top' ? 'top' : 'bottom']">
+    <div class="inf-app-bar" v-bind:class="[position == 'top' ? 'top' : 'bottom']">
         <slot :appBarState="appBarState" :back="back">
         </slot>
     </div>
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style>
-.app-bar {
+.inf-app-bar {
     margin: 0;
     position: relative;
     left: 0;

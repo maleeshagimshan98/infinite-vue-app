@@ -1,6 +1,6 @@
 <template>
     <!-- recommended to use components in the _app folder as wrapper components -->
-    <div class="sidemenu" v-bind:class="[isOpen ? 'open' : 'closed']">
+    <div class="inf-sidemenu" v-bind:class="[isOpen ? 'open' : 'closed']">
         <slot></slot>
     </div>
 </template>
@@ -24,22 +24,22 @@ export default {
 
 <style lang="css">
 
-    .sidemenu {
+    .inf-sidemenu {
         position: fixed;
         top : 0;
         bottom: 0;
         z-index : 110;  /** this side menu sits above the app bar */
     }
 
-    .sidemenu.closed {
+    .inf-sidemenu.closed {
         left: -20vw;
     }
 
-    .sidemenu.closed-right {
+    .inf-sidemenu.closed-right {
         right: -20vw;
     }
 
-    .sidemenu.open {
+    .inf-sidemenu.open {
         left: 20vw;
     }
 
