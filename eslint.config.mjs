@@ -1,25 +1,28 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
+import vuePlugin from 'eslint-plugin-vue';
 import prettier from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    files: ['src/**/*.{js,ts}'],
+    files: ['src/**/*.{js,ts,vue}', 'test/**/*.{js,ts}', 'vite.config.ts'],
     ignores: ['node_modules', 'dist', 'build'],
     languageOptions: {
-      globals: globals.node, // Enable Node.js global variables
+      globals: globals.node,
       parser: tseslint.parser,
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: './tsconfig.json',
+        extraFileExtensions: ['.vue'], // Support Vue files
       },
     },
     plugins: {
       '@typescript-eslint': tseslint.plugin,
+      vue: vuePlugin,
       prettier: prettierPlugin,
     },
     rules: {
@@ -29,27 +32,32 @@ export default [
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/consistent-type-imports': 'error',
 
+      /** ✅ Vue Rules */
+      'vue/multi-word-component-names': 'off', // Disable if single-word components are okay
+      'vue/no-unused-vars': 'warn',
+
       /** ✅ Prettier Rules */
       'prettier/prettier': [
         'error',
         {
-          endOfLine: 'lf', // Ensure LF (Line Feed) is used
-          semi: true, // Require semicolons
-          singleQuote: true, // Use single quotes
-          trailingComma: 'all', // Use trailing commas
-          printWidth: 120, // Wrap lines at 80 characters
-          tabWidth: 2, // Indent with 2 spaces
+          endOfLine: 'lf',
+          semi: true,
+          singleQuote: true,
+          trailingComma: 'all',
+          printWidth: 120,
+          tabWidth: 2,
         },
       ],
 
       /** ✅ Node.js & General JS Rules */
-      'eol-last': ['error', 'always'], // Ensure LF at the end of files
-      'linebreak-style': ['error', 'unix'], // Enforce LF (Unix-style EOL)
-      'no-console': 'warn', // Warn on console.log usage
+      'eol-last': ['error', 'always'],
+      'linebreak-style': ['error', 'unix'],
+      'no-console': 'warn',
       'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     },
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
-  prettier, // Disable conflicting ESLint rules that Prettier handles
+  ...vuePlugin.configs['flat/recommended'],
+  prettier,
 ];
