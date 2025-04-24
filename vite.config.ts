@@ -9,7 +9,8 @@ export default defineConfig({
   root : './test',
   resolve: {
     alias: {
-      '~bootstrap': './node_modules/bootstrap',
+      '@': fileURLToPath(new URL('./src', import.meta.url)), // Alias for 'src' directory
+      '~bootstrap': fileURLToPath(new URL('./node_modules/bootstrap', import.meta.url)), // Bootstrap alias
     }
   },
   build : {

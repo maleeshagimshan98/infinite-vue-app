@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    /* 💡 Output & Language Features */
+    "target": "ESNext" /* Use the latest ECMAScript features */,
+    "module": "ESNext" /* Use the latest ECMAScript features */,
+    "moduleResolution": "bundler",
+    "rootDir": "src" /* Set 'src' as the root directory */,
+    "outDir": "dist" /* Output compiled files to 'dist' */,
+    "allowJs": false /* Don't allow JavaScript files in the project */,
+    "resolveJsonModule": true /* Allow importing JSON files */,
+    "declaration": true /* Generate type definitions */,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+
+    /* 💡 Strict Type Checking */
+    "strict": true /* Enable all strict type checking */,
+    "noImplicitAny": true /* Disallow implicit 'any' types */,
+    "strictNullChecks": true /* Check for 'null' and 'undefined' */,
+    "strictFunctionTypes": true /* Check function type assignments */,
+    "strictBindCallApply": true /* Check 'bind', 'call', 'apply' methods */,
+    "noImplicitThis": true /* Disallow 'this' being implicitly 'any' */,
+    "useUnknownInCatchVariables": true /* Use 'unknown' instead of 'any' in catch */,
+    "noImplicitReturns": true /* Ensure functions always return a value */,
+    "noFallthroughCasesInSwitch": true /* Disallow fallthrough in switch statements */,
+
+    /* 💡 Module Interop */
+    "esModuleInterop": true /* Improve compatibility with CommonJS */,
+    "allowSyntheticDefaultImports": true /* Allow default imports from non-ES modules */,
+    "forceConsistentCasingInFileNames": true /* Enforce case-sensitive imports */,
+
+    /* 💡 Linting & Formatting */
+    "skipLibCheck": true /* Skip type checking for dependencies */,
+    "noUnusedLocals": false /* Warn about unused local variables */,
+    "noUnusedParameters": true /* Warn about unused function parameters */,
+    "exactOptionalPropertyTypes": true /* Enforce strict optional properties */,
+    "noUncheckedIndexedAccess": true /* Ensure array/indexed types include 'undefined' */,
+
+    /* 💡 Vite-Specific */
+    "types": ["vite/client"] /* Include Vite client types */,
+    "baseUrl": "." /* Set base for module resolution */,
+    "paths": {
+      "@/*": ["src/*"] /* Alias for 'src' directory */
+    },
+
+    /* 💡 Compilation Settings */
+    "noEmit": false /* Don't output compiled files (useful for linting) */
+  },
+  "include": ["src/**/*.ts", "src/**/*.vue", "vite.config.ts"],
+  "exclude": ["node_modules", "dist", "build"]
+}
