@@ -5,8 +5,9 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, } from 'vue';
+export default defineComponent({
   data() {
     return {
       currentPage: 1,
@@ -15,6 +16,7 @@ export default {
   props: {
     pages: {
       type: [Number],
+      required: true
     },
     startAt: {
       type: [Number],
@@ -53,9 +55,9 @@ export default {
       }
     },
   },
-  async mounted() {},
-  beforeMount() {},
-};
+  async mounted() { },
+  beforeMount() { },
+});
 </script>
 
 <style></style>

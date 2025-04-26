@@ -6,8 +6,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   data() {
     return {};
   },
@@ -66,7 +68,7 @@ export default {
       this.$store.dispatch('setOverlayStatus', false);
     }
   },
-};
+});
 </script>
 
 <style>

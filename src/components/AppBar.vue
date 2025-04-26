@@ -7,9 +7,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import AppBar from './_app/AppBar/AppBar.vue';
-export default {
+
+export default defineComponent({
   data() {
     return {};
   },
@@ -34,7 +36,7 @@ export default {
        */
     },
   },
-};
+});
 </script>
 
 <style lang="css"></style>

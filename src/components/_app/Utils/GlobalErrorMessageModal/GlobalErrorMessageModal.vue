@@ -18,10 +18,11 @@
   </DialogMessageModal>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import { DialogMessageModal, DialogMessageState } from '../DialogMessageModal/index.js';
 
-export default {
+export default defineComponent({
   name: 'GlobalErrorMessageModal',
   data() {
     return {
@@ -33,7 +34,7 @@ export default {
   },
   props: {
     errorMessageState: {
-      type: DialogMessageState,
+      type: () => DialogMessageState,
       required: true,
     },
   },
@@ -69,7 +70,7 @@ export default {
   unmounted() {
     // Lifecycle hook: after component is unmounted
   },
-};
+});
 </script>
 
 <style></style>
