@@ -46,6 +46,6 @@
     /* 💡 Compilation Settings */
     "noEmit": false /* Don't output compiled files (useful for linting) */
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "src/components/_app/Modal/ModalState.ts", ],
+  "include": ["src/**/*.ts", "src/**/*.vue", "src/components/_app/Modal/ModalState.ts"],
   "exclude": ["node_modules", "dist", "build"]
 }

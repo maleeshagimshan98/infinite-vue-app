@@ -1,4 +1,4 @@
-import { CustomInputStyles } from "vue-custom-text-input"
+import { CustomInputStyles } from 'vue-custom-text-input';
 
 export default new CustomInputStyles({
   //...  TODO - add css class names for each state of each section of element
@@ -23,4 +23,4 @@ export default new CustomInputStyles({
     error: [],
     success: [],
   },
-})
+});

@@ -1,10 +1,8 @@
 export default {
-    state () {
-        return {}
-    },
-    mutations : {
-
-    },
-    actions : {},
-    getters : {}
-}
+  state() {
+    return {};
+  },
+  mutations: {},
+  actions: {},
+  getters: {},
+};

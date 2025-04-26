@@ -1,7 +1,10 @@
 class ModalState {
+  private _isActive: boolean;
+  private _message: string;
+
   constructor() {
-    this._isActive = false
-    this._message = ""
+    this._isActive = false;
+    this._message = '';
   }
 
   /**
@@ -9,17 +12,17 @@ class ModalState {
    *
    * @param {string} message - The message to display on the modal. Defaults to an empty string.
    */
-  open(message = "") {
-    this._isActive = true
-    this._message = message
+  open(message: string = ''): void {
+    this._isActive = true;
+    this._message = message;
   }
 
   /**
    * Closes the modal.
    */
-  close() {
-    this._isActive = false
-    this._message = ""
+  close(): void {
+    this._isActive = false;
+    this._message = '';
   }
 
   /**
@@ -27,8 +30,8 @@ class ModalState {
    *
    * @returns {boolean} The current value of the `isActive` property indicating if the modal is open.
    */
-  isOpen() {
-    return this._isActive
+  isOpen(): boolean {
+    return this._isActive;
   }
 
   /**
@@ -36,8 +39,8 @@ class ModalState {
    *
    * @returns {string} The current value of the `message` property.
    */
-  get message() {
-    return this._message
+  get message(): string {
+    return this._message;
   }
 
   /**
@@ -45,9 +48,9 @@ class ModalState {
    *
    * @param {string} value - The new value for the `message` property.
    */
-  set message(value) {
-    this._message = value
+  set message(value: string) {
+    this._message = value;
   }
 }
 
-export default ModalState
+export default ModalState;

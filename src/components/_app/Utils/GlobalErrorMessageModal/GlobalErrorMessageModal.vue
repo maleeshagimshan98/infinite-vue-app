@@ -1,8 +1,5 @@
 <template lang="">
-  <DialogMessageModal
-    :state="errorMessageState"
-    :clickaway="true"
-    @modal:close="errorMessageState.close()">
+  <DialogMessageModal :state="errorMessageState" :clickaway="true" @modal:close="errorMessageState.close()">
     <div class="flex flex-row justify-center mt-6 items-center">
       <ExclamationTriangleIcon class="w-12 sm:w-16 mr-6 sm:mr-4" />
       <p class="text-start text-md font-medium grow-0">
@@ -13,7 +10,8 @@
       <button
         class="w-[75%] sm:w-[40%] mt-4 mb-3 sm:mt-8 btn bg-red-500 text-white"
         type="button"
-        @click="errorMessageState.close()">
+        @click="errorMessageState.close()"
+      >
         OK
       </button>
     </template>
@@ -21,14 +19,14 @@
 </template>
 
 <script>
-import {DialogMessageModal, DialogMessageState} from "../DialogMessageModal/index.js"
+import { DialogMessageModal, DialogMessageState } from '../DialogMessageModal/index.js';
 
 export default {
-  name: "GlobalErrorMessageModal",
+  name: 'GlobalErrorMessageModal',
   data() {
     return {
       // Your data properties go here
-    }
+    };
   },
   components: {
     DialogMessageModal,
@@ -41,7 +39,7 @@ export default {
   },
   methods: {
     goBack() {
-      this.$emit("breadcrumb:back")
+      this.$emit('breadcrumb:back');
     },
   },
   computed: {
@@ -71,7 +69,7 @@ export default {
   unmounted() {
     // Lifecycle hook: after component is unmounted
   },
-}
+};
 </script>
 
 <style></style>

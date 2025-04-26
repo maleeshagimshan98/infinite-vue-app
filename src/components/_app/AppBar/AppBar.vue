@@ -1,70 +1,65 @@
 <template>
-    <!-- recommended to use components in the _app folder as wrapper components -->
-    <div class="inf-app-bar" v-bind:class="[position == 'top' ? 'top' : 'bottom']">
-        <slot :appBarState="appBarState" :back="back">
-        </slot>
-    </div>
+  <!-- recommended to use components in the _app folder as wrapper components -->
+  <div class="inf-app-bar" v-bind:class="[position == 'top' ? 'top' : 'bottom']">
+    <slot :appBarState="appBarState" :back="back"> </slot>
+  </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 
-export default {
-    data() {
-        return {
-        }
+export default defineComponent({
+  data() {
+    return {};
+  },
+  computed: {
+    appBarState() {
+      return this.$store.getters.getAppBarState;
     },
-    computed : {
-        appBarState () {
-            return this.$store.getters.getAppBarState
-        }
+  },
+  props: {
+    position: {
+      type: String,
+      default: 'top',
     },
-    props: {
-        position: {
-            type: String,
-            default: "top"
-        },
+  },
+  methods: {
+    async back() {
+      /**
+       *  if (appMetaData.isOverlayPresent)
+       *  this.$store.dispatch('hideOverlay')
+       *
+       *  else {
+       *    this.$router.back()
+       *  }
+       */
     },
-    methods: {
-        async back() {
-            /**
-                 *  if (appMetaData.isOverlayPresent)
-                 *  this.$store.dispatch('hideOverlay')
-                 * 
-                 *  else {
-                 *    this.$router.back()
-                 *  }
-                 */
-        }
-    },
-    beforeMount () {
-        if (!this.$store.getters.getAppBarState) {
-            console.warn('Warning - No appBarState is found on the vuex store')
-        }    
-    },
-    mounted() {                        
-    },
-    beforeUnmount() {
-    },
-    unmounted () {
+  },
+  beforeMount() {
+    if (!this.$store.getters.getAppBarState) {
+      console.warn('Warning - No appBarState is found on the vuex store');
     }
-
-}
+  },
+  mounted() {},
+  beforeUnmount() {},
+  unmounted() {},
+});
 </script>
 
 <style>
 .inf-app-bar {
-    margin: 0;
-    position: relative;
-    left: 0;
-    right: 0;
-    z-index: 100;
+  margin: 0;
+  position: relative;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 .top {
-    top: 0;
+  top: 0;
 }
 
 .bottom {
-    bottom: 0
+  bottom: 0;
 }
 </style>
