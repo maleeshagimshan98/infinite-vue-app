@@ -37,7 +37,7 @@
     "noUncheckedIndexedAccess": true /* Ensure array/indexed types include 'undefined' */,
 
     /* 💡 Vite-Specific */
-    "types": ["vite/client"] /* Include Vite client types */,
+    "types": ["vite/client","jest"] /* Include Vite client types */,
     "baseUrl": "." /* Set base for module resolution */,
     "paths": {
       "@/*": ["src/*"] /* Alias for 'src' directory */
